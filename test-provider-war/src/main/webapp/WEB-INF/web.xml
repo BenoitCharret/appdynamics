@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ServletMain</servlet-name>
+  	<display-name>ServletMain</display-name>
+  	<description></description>
+  	<servlet-class>com.europcar.appdynamics.provider.ServletMain</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ServletSpecial</servlet-name>
+  	<display-name>ServletSpecial</display-name>
+  	<description></description>
+  	<servlet-class>com.europcar.appdynamics.provider.ServletSpecial</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletMain</servlet-name>
+  	<url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ServletSpecial</servlet-name>
+  	<url-pattern>/ServletSpecial</url-pattern>
+  </servlet-mapping>
 </web-app>
