@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
-		 <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>	 
+		 <m2eclipse.wtp.contextRoot>/test-provider-war</m2eclipse.wtp.contextRoot>	 
 	</properties>
   
   <dependencies>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSpecial
  */
-public class ServletSpecial extends HttpServlet {
+public class ServletSpecial extends AbstractServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -39,6 +39,8 @@ public class ServletSpecial extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		super.service(req, resp);
+		
 		PrintWriter pw=resp.getWriter();
 		pw.write("special url was call "+req.getRequestURL().toString());
 		
