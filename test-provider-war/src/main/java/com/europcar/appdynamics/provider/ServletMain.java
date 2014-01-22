@@ -19,7 +19,13 @@ public class ServletMain extends AbstractServlet {
 			throws ServletException, IOException {
 		super.service(req, resp);
 		
-		checkParameterToThrowException(req);
+		try {
+			checkParameterToThrowException(req);
+		} catch (MonException e) {
+			LOG.error("j'ai trappé mon exception");
+		}catch(MonExceptionANePasLoggue e){
+			e.printStackTrace();
+		}
 		//Basic servlet only display path that were called
 		PrintWriter pw=resp.getWriter();
 		pw.write(req.getRequestURL().toString() + "--> OK");
@@ -28,7 +34,7 @@ public class ServletMain extends AbstractServlet {
 				
 	}
 	
-	private void checkParameterToThrowException(HttpServletRequest req) throws IOException{
+	private void checkParameterToThrowException(HttpServletRequest req) throws IOException,MonException,MonExceptionANePasLoggue{
 		if (req.getParameter("launche")!=null){			
 			throw new RuntimeException("ca ne va pas du tout");			
 		}
@@ -42,6 +48,14 @@ public class ServletMain extends AbstractServlet {
 				break;
 			case 3:
 				LOG.error("je log en erreur avec une exception", new IOException("exception speciale logger"));
+			case 4:	
+				throw new MonException("mo exception est lancée");
+			case 5:
+				LOG.error("je loggue mon exception",new MonException("le log c'est bien"));
+			case 6:	
+				throw new MonExceptionANePasLoggue("mo exception est lancée");
+			case 7:
+				LOG.error("je loggue mon exception",new MonExceptionANePasLoggue("le log c'est bien"));
 			default:
 				break;
 			}
