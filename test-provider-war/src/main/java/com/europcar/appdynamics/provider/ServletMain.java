@@ -8,18 +8,46 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 public class ServletMain extends AbstractServlet {
+	
+	private static final Logger LOG=Logger.getLogger(ServletMain.class);
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		super.service(req, resp);
+		
+		checkParameterToThrowException(req);
 		//Basic servlet only display path that were called
 		PrintWriter pw=resp.getWriter();
 		pw.write(req.getRequestURL().toString() + "--> OK");
 		
+		
 				
 	}
+	
+	private void checkParameterToThrowException(HttpServletRequest req) throws IOException{
+		if (req.getParameter("launche")!=null){			
+			throw new RuntimeException("ca ne va pas du tout");			
+		}
+		if (req.getParameter("launchs")!=null){
+			int value=Integer.parseInt(req.getParameter("launchs"));
+			switch (value){
+			case 1:
+				throw new IOException("je lance une IO");
+			case 2:
+				LOG.error("je log en erreur");
+				break;
+			case 3:
+				LOG.error("je log en erreur avec une exception", new IOException("exception speciale logger"));
+			default:
+				break;
+			}
+		}
+	}
+	
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
