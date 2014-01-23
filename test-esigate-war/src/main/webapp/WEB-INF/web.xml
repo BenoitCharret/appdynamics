@@ -8,6 +8,10 @@
 	<servlet>
 		<servlet-name>aggregator1</servlet-name>
 		<servlet-class>org.esigate.servlet.AggregatorServlet</servlet-class>
+		<init-param>
+			<param-name>provider</param-name>
+			<param-value>default</param-value>
+		</init-param>
 	</servlet>
 
 	<servlet>

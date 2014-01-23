@@ -1,31 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.europcar.appdynamics</groupId>
-  <artifactId>test-provider2-war</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>test-provider-war Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  
-  <properties>
-		 <m2eclipse.wtp.contextRoot>/test-provider-war2</m2eclipse.wtp.contextRoot>	 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.europcar.appdynamics</groupId>
+	<artifactId>test-provider2-war</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>test-provider-war Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<m2eclipse.wtp.contextRoot>/test-provider2-war</m2eclipse.wtp.contextRoot>
 	</properties>
-  
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-   		<groupId>javax.servlet</groupId>
-   		<artifactId>servlet-api</artifactId>
-   		<version>2.3</version>
-   		<scope>provided</scope> 
-   	</dependency>
-   	<dependency>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
@@ -35,8 +35,21 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.6.2</version>
 		</dependency>
-  </dependencies>
-  <build>
-    <finalName>test-provider-war</finalName>
-  </build>
+	</dependencies>
+	<build>
+		<finalName>test-provider2-war</finalName>
+		<plugins>
+		<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <verbose>false</verbose>
+          <fork>true</fork>
+          <compilerVersion>1.5</compilerVersion>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+		</plugins>
+	</build>
 </project>

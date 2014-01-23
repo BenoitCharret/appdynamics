@@ -8,9 +8,9 @@
 	<name>test-esigate-war Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		 <m2eclipse.wtp.contextRoot>/test-esigate-war</m2eclipse.wtp.contextRoot>	 
+		<m2eclipse.wtp.contextRoot>/test-esigate-war</m2eclipse.wtp.contextRoot>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,5 +38,19 @@
 
 	<build>
 		<finalName>test-esigate-war</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<verbose>false</verbose>
+					<fork>true</fork>
+					<compilerVersion>1.5</compilerVersion>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
