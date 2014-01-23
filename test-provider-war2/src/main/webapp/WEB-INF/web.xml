@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ServletMain</servlet-name>
+  	<display-name>ServletMain</display-name>
+  	<description></description>
+  	<servlet-class>com.europcar.appdynamics.provider.ServletMain2</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ServletSpecial</servlet-name>
+  	<display-name>ServletSpecial</display-name>
+  	<description></description>
+  	<servlet-class>com.europcar.appdynamics.provider.ServletSpecial</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletMain</servlet-name>
+  	<url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ServletSpecial</servlet-name>
+  	<url-pattern>/ServletSpecial</url-pattern>
+  </servlet-mapping>
+</web-app>
